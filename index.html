@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Casamento</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Impede a barra de rolagem */
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 30vh;
+            position: relative;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #ff7f7f;
+            margin: 0 10px;
+            position: relative;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            var button = document.getElementById('no-button');
+            var newX = Math.random() * (window.innerWidth - button.offsetWidth);
+            var newY = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = newX + 'px';
+            button.style.top = newY + 'px';
+            var messages = ["Nem tenta😡", "Tu para😭"];
+            var messageIndex = Math.floor(Math.random() * messages.length);
+            button.innerText = messages[messageIndex];
+            return false; // Importante para evitar o comportamento padrão da tag âncora
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: black;">ACEITA CASAR COMIGO, JÚLIA?</h1>
+        <div class="buttons">
+            <a href="congratulations.html" class="button" style="background-color: #ff69b4;">Sim</a>
+            <a href="#" id="no-button" class="button" onclick="return moveButton()">Não</a>
+        </div>
+    </div>
+</body>
+</html>
